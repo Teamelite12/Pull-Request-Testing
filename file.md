@@ -12,3 +12,8 @@
 | Mr. Nobody | Kurt Russell |
 | Elena Neves | Elsa Pataky |
 | Han Lue | Sung Kang |
+
+| Hattie Shaw | Vanessa Kirby |
+| Brixton Lore | Idris Elba |
+| Madam M | Eiza González |
+| Magdalene Shaw | Helen Mirren |
