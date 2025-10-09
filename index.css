@@ -1,3 +1,4 @@
+
 @import 'tailwindcss';
 @import "tw-animate-css";
 
@@ -121,3 +122,4 @@
   --radius-2xl: calc(var(--radius) * 3);
   --radius-full: 9999px;
 }
+
