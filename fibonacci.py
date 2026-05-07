@@ -15,6 +15,10 @@ def fibonacci(n):
 if __name__ == "__main__":
     try:
         number = int(input("Enter a non-negative integer: ").strip())
-        print(f"Fibonacci({number}) = {fibonacci(number)}")
-    except ValueError as error:
-        print(f"Invalid input: {error}")
+    except ValueError:
+        print("Invalid input: please enter a whole number.")
+    else:
+        try:
+            print(f"Fibonacci({number}) = {fibonacci(number)}")
+        except ValueError as error:
+            print(f"Invalid input: {error}")
