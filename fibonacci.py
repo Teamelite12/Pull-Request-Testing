@@ -13,5 +13,8 @@ def fibonacci(n):
 
 
 if __name__ == "__main__":
-    number = int(input("Enter a non-negative integer: ").strip())
-    print(f"Fibonacci({number}) = {fibonacci(number)}")
+    try:
+        number = int(input("Enter a non-negative integer: ").strip())
+        print(f"Fibonacci({number}) = {fibonacci(number)}")
+    except ValueError as error:
+        print(f"Invalid input: {error}")
