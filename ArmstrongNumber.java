@@ -8,7 +8,7 @@ public class ArmstrongNumber {
 
         int digits = String.valueOf(number).length();
         int originalNumber = number;
-        int sum = 0;
+        long sum = 0;
 
         do {
             int digit = number % 10;
@@ -19,8 +19,8 @@ public class ArmstrongNumber {
         return sum == originalNumber;
     }
 
-    private static int power(int base, int exponent) {
-        int result = 1;
+    private static long power(int base, int exponent) {
+        long result = 1;
         for (int i = 0; i < exponent; i++) {
             result *= base;
         }
@@ -28,15 +28,15 @@ public class ArmstrongNumber {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter a number: ");
+            int number = scanner.nextInt();
 
-        System.out.print("Enter a number: ");
-        int number = scanner.nextInt();
-
-        if (isArmstrong(number)) {
-            System.out.println(number + " is an Armstrong number.");
-        } else {
-            System.out.println(number + " is not an Armstrong number.");
+            if (isArmstrong(number)) {
+                System.out.println(number + " is an Armstrong number.");
+            } else {
+                System.out.println(number + " is not an Armstrong number.");
+            }
         }
     }
 }
