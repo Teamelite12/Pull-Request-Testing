@@ -6,7 +6,7 @@ public class ArmstrongNumber {
             return false;
         }
 
-        int digits = String.valueOf(number).length();
+        int digits = countDigits(number);
         int originalNumber = number;
         long sum = 0;
 
@@ -19,20 +19,19 @@ public class ArmstrongNumber {
         return sum == (long) originalNumber;
     }
 
+    private static int countDigits(int number) {
+        int digits = 0;
+
+        do {
+            digits++;
+            number /= 10;
+        } while (number > 0);
+
+        return digits;
+    }
+
     private static long power(int base, int exponent) {
-        long result = 1;
-        long value = base;
-        int remainingExponent = exponent;
-
-        while (remainingExponent > 0) {
-            if ((remainingExponent & 1) == 1) {
-                result *= value;
-            }
-            value *= value;
-            remainingExponent >>= 1;
-        }
-
-        return result;
+        return (long) Math.pow(base, exponent);
     }
 
     public static void main(String[] args) {
