@@ -1,6 +1,3 @@
-$ git commit -m "Refactor usability tests
->
->
-request-checks: true"
-
 # Pull-Request-Testing
+
+A small demo repository for testing pull request workflows and CI checks.
