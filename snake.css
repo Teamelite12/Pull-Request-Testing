@@ -142,13 +142,13 @@ h1 {
 
 @media (max-width: 500px) {
     #game-canvas {
-        width: 320px;
-        height: 320px;
+        transform: scale(0.8);
+        transform-origin: top center;
     }
 
     .overlay {
-        width: 320px;
-        height: 320px;
+        transform: scale(0.8);
+        transform-origin: top center;
     }
 
     .mobile-controls {
