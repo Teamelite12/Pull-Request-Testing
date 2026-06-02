@@ -1,23 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sudoku</title>
+  <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-    <h1>sample</h1>
-    <main>
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
+  <div class="app">
+    <header class="header">
+      <h1 class="title">Sudoku</h1>
+      <div class="header-controls">
+        <div class="timer" id="timer">00:00</div>
+        <div class="difficulty-group">
+          <button class="diff-btn active" data-diff="easy">Easy</button>
+          <button class="diff-btn" data-diff="medium">Medium</button>
+          <button class="diff-btn" data-diff="hard">Hard</button>
+        </div>
+        <button class="btn btn-primary" id="new-game-btn">New Game</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="board-wrapper">
+        <div class="board" id="board" role="grid" aria-label="Sudoku board"></div>
+      </div>
+
+      <div class="sidebar">
+        <div class="numpad" id="numpad" role="group" aria-label="Number pad">
+          <button class="num-btn" data-num="1">1</button>
+          <button class="num-btn" data-num="2">2</button>
+          <button class="num-btn" data-num="3">3</button>
+          <button class="num-btn" data-num="4">4</button>
+          <button class="num-btn" data-num="5">5</button>
+          <button class="num-btn" data-num="6">6</button>
+          <button class="num-btn" data-num="7">7</button>
+          <button class="num-btn" data-num="8">8</button>
+          <button class="num-btn" data-num="9">9</button>
+          <button class="num-btn erase-btn" data-num="0" aria-label="Erase">✕</button>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn btn-secondary" id="hint-btn">💡 Hint <span class="hint-count" id="hint-count">3</span></button>
+          <button class="btn btn-secondary" id="notes-btn">✏️ Notes <span class="notes-status" id="notes-status">Off</span></button>
+          <button class="btn btn-outline" id="check-btn">✓ Check</button>
+          <button class="btn btn-outline" id="reset-btn">↺ Reset</button>
+        </div>
+
+        <div class="mistakes-row">
+          <span>Mistakes:</span>
+          <span class="mistakes" id="mistakes">0 / 3</span>
+        </div>
+      </div>
     </main>
+
+    <div class="modal hidden" id="win-modal" role="dialog" aria-modal="true" aria-labelledby="win-title">
+      <div class="modal-box">
+        <div class="win-icon">🎉</div>
+        <h2 id="win-title">Puzzle Solved!</h2>
+        <p id="win-time"></p>
+        <p id="win-mistakes"></p>
+        <button class="btn btn-primary" id="play-again-btn">Play Again</button>
+      </div>
+    </div>
+
+    <div class="modal hidden" id="lose-modal" role="dialog" aria-modal="true" aria-labelledby="lose-title">
+      <div class="modal-box">
+        <div class="win-icon">😔</div>
+        <h2 id="lose-title">Game Over</h2>
+        <p>Too many mistakes. Try again!</p>
+        <button class="btn btn-primary" id="try-again-btn">Try Again</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
 </body>
 </html>
