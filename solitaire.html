@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solitaire</title>
+  <link rel="stylesheet" href="solitaire.css">
+</head>
+<body>
+  <div id="app">
+    <header id="header">
+      <h1>♠ Solitaire ♥</h1>
+      <div class="controls">
+        <span class="score-display">Score: <strong id="score">0</strong></span>
+        <button id="btn-undo">↩ Undo</button>
+        <button id="btn-new">⟳ New Game</button>
+      </div>
+    </header>
+
+    <div id="top-row">
+      <div id="stock" class="pile" title="Click to draw"></div>
+      <div id="waste" class="pile"></div>
+      <div class="spacer"></div>
+      <div id="foundation-0" class="pile foundation"></div>
+      <div id="foundation-1" class="pile foundation"></div>
+      <div id="foundation-2" class="pile foundation"></div>
+      <div id="foundation-3" class="pile foundation"></div>
+    </div>
+
+    <div id="tableau">
+      <div id="col-0" class="pile tableau-col"></div>
+      <div id="col-1" class="pile tableau-col"></div>
+      <div id="col-2" class="pile tableau-col"></div>
+      <div id="col-3" class="pile tableau-col"></div>
+      <div id="col-4" class="pile tableau-col"></div>
+      <div id="col-5" class="pile tableau-col"></div>
+      <div id="col-6" class="pile tableau-col"></div>
+    </div>
+  </div>
+
+  <div id="win-overlay" class="hidden">
+    <div class="win-dialog">
+      <div class="win-emoji">🎉</div>
+      <h2>You Won!</h2>
+      <p>Final Score: <strong id="final-score">0</strong></p>
+      <button id="btn-play-again">Play Again</button>
+    </div>
+  </div>
+
+  <script src="solitaire.js"></script>
+</body>
+</html>
