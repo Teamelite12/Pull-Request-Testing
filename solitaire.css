@@ -1,0 +1,195 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #1b5e35;
+  min-height: 100vh;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #fff;
+  padding: 12px;
+}
+
+/* ─── Header ─────────────────────────────────────────────────── */
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#header h1 {
+  font-size: 1.6rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
+  letter-spacing: .04em;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.score-display {
+  font-size: 1rem;
+  background: rgba(0, 0, 0, .25);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+button {
+  padding: 6px 14px;
+  background: #2e7d32;
+  border: 1px solid #4caf50;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: .875rem;
+  font-family: inherit;
+  transition: background .15s;
+}
+
+button:hover  { background: #388e3c; }
+button:active { background: #1b5e20; }
+
+/* ─── Layout ─────────────────────────────────────────────────── */
+
+#top-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  align-items: flex-start;
+}
+
+.spacer { flex: 1; }
+
+#tableau {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+/* ─── Piles ──────────────────────────────────────────────────── */
+
+.pile {
+  position: relative;
+  width: 80px;
+  min-height: 112px;
+  border-radius: 8px;
+  border: 2px dashed rgba(255, 255, 255, .2);
+  background: rgba(0, 0, 0, .15);
+  flex-shrink: 0;
+}
+
+.pile.drag-over {
+  background: rgba(255, 255, 150, .15);
+  border-color: rgba(255, 255, 100, .5);
+}
+
+.tableau-col { min-height: 200px; }
+
+.empty-hint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  opacity: .35;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ─── Cards ──────────────────────────────────────────────────── */
+
+.card {
+  position: absolute;
+  width: 76px;
+  height: 110px;
+  border-radius: 6px;
+  border: 1px solid #888;
+  user-select: none;
+  transition: box-shadow .1s;
+}
+
+.card.face-down {
+  background: repeating-linear-gradient(
+    135deg,
+    #1565c0 0px,  #1565c0 6px,
+    #1976d2 6px,  #1976d2 12px
+  );
+  border-color: #0d47a1;
+  cursor: default;
+}
+
+.card.face-up {
+  background: #fff;
+  cursor: grab;
+}
+
+.card.face-up:active { cursor: grabbing; }
+
+.card.face-up.red     { color: #c62828; }
+.card.face-up:not(.red) { color: #1a1a1a; }
+
+.card.selected {
+  box-shadow: 0 0 0 3px #ffeb3b, 0 4px 12px rgba(0, 0, 0, .4);
+  z-index: 10;
+}
+
+.card.dragging { opacity: .35; }
+
+/* Card face layout */
+.card-tl,
+.card-br {
+  position: absolute;
+  font-size: .7rem;
+  font-weight: bold;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.card-tl { top: 3px; left: 4px; }
+.card-br { bottom: 3px; right: 4px; transform: rotate(180deg); }
+
+.card-suit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+/* ─── Win overlay ────────────────────────────────────────────── */
+
+#win-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+#win-overlay.hidden { display: none; }
+
+.win-dialog {
+  background: #1b5e35;
+  border: 3px solid #4caf50;
+  border-radius: 16px;
+  padding: 40px 50px;
+  text-align: center;
+}
+
+.win-emoji          { font-size: 3.5rem; margin-bottom: 8px; }
+.win-dialog h2      { font-size: 2rem; margin-bottom: 12px; }
+.win-dialog p       { font-size: 1.1rem; margin-bottom: 24px; }
+.win-dialog button  { font-size: 1rem; padding: 10px 28px; }
