@@ -1,0 +1,6 @@
+GitHub stacked pull request accessibility audit
+Fixture: S15P
+Layer: 2
+Scenarios: 15
+
+Parent stack for the branching retargeting scenario. Only disposable audit branches are involved.
