@@ -1,0 +1,6 @@
+GitHub stacked pull request accessibility audit
+Fixture: S14
+Layer: 1
+Scenarios: 14
+
+Merge only layer 1 into the audit base. Inspect automatic retargeting on layer 2.
