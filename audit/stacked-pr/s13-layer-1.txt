@@ -1,0 +1,6 @@
+GitHub stacked pull request accessibility audit
+Fixture: S13
+Layer: 1
+Scenarios: 13
+
+One approval blocks merging so the auto-merge controls can be inspected before any merge.
