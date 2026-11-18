@@ -1,0 +1,6 @@
+GitHub stacked pull request accessibility audit
+Fixture: S02
+Layer: 1
+Scenarios: 2
+
+The lower PR exists. Compare layer-1 against prepared layer-2, then use Create stack.
