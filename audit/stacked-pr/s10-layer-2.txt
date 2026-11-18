@@ -1,0 +1,6 @@
+GitHub stacked pull request accessibility audit
+Fixture: S10
+Layer: 2
+Scenarios: 10
+
+Ready two-layer native stack. Merge the upper PR to merge both layers into the audit base.
