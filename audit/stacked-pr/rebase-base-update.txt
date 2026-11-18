@@ -1,0 +1,1 @@
+This independent base change makes the S08 stack out of date without changing its patch.
