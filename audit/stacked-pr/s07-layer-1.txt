@@ -1,0 +1,6 @@
+GitHub stacked pull request accessibility audit
+Fixture: S07
+Layer: 1
+Scenarios: 7
+
+An existing two-layer native stack and an unsubmitted third branch.
