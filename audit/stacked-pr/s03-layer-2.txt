@@ -1,0 +1,6 @@
+GitHub stacked pull request accessibility audit
+Fixture: S03
+Layer: 2
+Scenarios: 3, 4, 5, 6, 16
+
+Use the native stack header, list indicator, map, Shift+J/Shift+K, and added-to-stack activity.
