@@ -1,0 +1,6 @@
+GitHub stacked pull request accessibility audit
+Fixture: S15
+Layer: 2
+Scenarios: 15
+
+Dependent native stack based on parent layer 1. Merge that parent PR, then delete its audit-only branch.
