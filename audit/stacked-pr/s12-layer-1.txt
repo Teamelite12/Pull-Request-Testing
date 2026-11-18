@@ -1,0 +1,6 @@
+GitHub stacked pull request accessibility audit
+Fixture: S12
+Layer: 1
+Scenarios: 12
+
+A scoped merge-queue rule will apply only to this audit base. Do not enqueue unrelated PRs.
