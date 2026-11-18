@@ -1,0 +1,6 @@
+GitHub stacked pull request accessibility audit
+Fixture: S01
+Layer: 1
+Scenarios: 1
+
+Two dependent open PRs, intentionally not native-stacked. Use the Create stack recommendation.
